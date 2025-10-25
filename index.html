@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthTrack Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <div class="max-w-7xl mx-auto p-6 grid grid-cols-12 gap-6">
+
+    <aside class="col-span-12 md:col-span-3 bg-white rounded-xl shadow-lg p-8">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 bg-green-500 text-teal-600 flex items-center-text-white justify-center rounded">HT</div>
+        <h1 class="font-bold text-lg">HealthTrack</h1>
+      </div>
+      <nav class="flex flex-col gap-2">
+        <a href="#overview" class="flex items-center gap-2 p-2 rounded bg-teal-100 text-teal-600 font-semibold"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+        <a href="#appointments" class="flex items-center gap-2 p-2 rounded hover:bg-teal-50 text-gray-700"><i class="fa-regular fa-calendar-days"></i> Appointments</a>
+        <a href="#prescriptions" class="flex items-center gap-2 p-2 rounded hover:bg-teal-50 text-gray-700"><i class="fa-solid fa-pills"></i> Prescriptions</a>
+        <a href="#reports" class="flex items-center gap-2 p-2 rounded hover:bg-teal-50 text-gray-700"><i class="fa-solid fa-file-medical"></i> Reports</a>
+        <a href="#settings" class="flex items-center gap-2 p-2 rounded hover:bg-teal-50 text-gray-700"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+    </aside>
+
+    <main class="col-span-12 md:col-span-9 flex flex-col gap-6">
+
+      <header class="flex justify-between items-center bg-white rounded-xl shadow-lg p-4">
+        <div>
+          <h2 class="text-xl font-semibold" id="overview">Patient Overview</h2>
+          <p class="text-gray-500 text-sm">Latest health indicators and care items</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <button class="relative text-gray-700"><i class="fa-regular fa-belll text-xl"></i><span class="absolute -top-2 -right-2  text-white text-xs px-1 rounded-full">3</span></button>
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-blue-200 text-blue-600 flex items-center justify-center rounded-full">U1</div>
+            <div class="flex flex-col">
+              <span class="font-semibold">Patient 1</span>
+              <span class="text-gray-500 text-sm">Male • XX years</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <div class="bg-secondary rounded-xl shadow-lg p-8">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-teal-100 text-teal-600 flex items-center justify-center rounded"><i class="fa-solid fa-heart"></i></div>
+              <div>
+                <p class="text-sm text-gray-500">Heart Rate</p>
+                <p class="text-lg font-bold">76 bpm</p>
+              </div>
+            </div>
+            <span class="text-gray-500 text-sm">Stable</span>
+          </div>
+          <p class="text-gray-400 text-xs">Last checked 10 mins ago</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-green-100 text-green-600 flex items-center justify-center rounded"><i class="fa-solid fa-heart-pulse"></i></div>
+              <div>
+                <p class="text-sm text-gray-500">Blood Pressure</p>
+                <p class="text-lg font-bold">118/76 mmHg</p>
+              </div>
+            </div>
+            <span class="text-gray-500 text-sm">Normal</span>
+          </div>
+          <p class="text-gray-400 text-xs">Measured today at 09:30</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-blue-100 text-blue-600 flex items-center justify-center rounded"><i class="fa-solid fa-lungs"></i></div>
+              <div>
+                <p class="text-sm text-gray-500">Oxygen Level</p>
+                <p class="text-lg font-bold">98%</p>
+              </div>
+            </div>
+            <span class="text-gray-500 text-sm">Good</span>
+          </div>
+          <p class="text-gray-400 text-xs">Checked 1 hour ago</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-teal-100 text-teal-600 flex items-center justify-center rounded"><i class="fa-solid fa-person"></i></div>
+              <div>
+                <p class="text-sm text-gray-500">BMI</p>
+                <p class="text-lg font-bold">22.4 kg/m²</p>
+              </div>
+            </div>
+            <span class="text-gray-500 text-sm">Healthy</span>
+          </div>
+          <p class="text-gray-400 text-xs">Updated last week</p>
+        </div>
+
+      </section>
+
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+        <div class="col-span-2 bg-pink-300 rounded-xl shadow-lg p-8">
+          <h3 class="font-semibold mb-2">Upcoming Appointments</h3>
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="text-black-500">
+                <th class="py-2">When</th>
+                <th class="py-2">With</th>
+                <th class="py-2">Type</th>
+                <th class="py-2">Status</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700">
+              <tr>
+                <td class="py-2">Jan 29, 2021 • 10:00</td>
+                <td>Doctor 1</td>
+                <td>General Check</td>
+                <td><span class="bg-green-100 text-green-600 px-2 py-1 rounded-full text-xs">Upcoming</span></td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">Oct 10, 2025 • 15:00</td>
+                <td>Doctor 2</td>
+                <td>Cardiology</td>
+                <td><span class="bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs">Completed</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="bg-white rounded-xl shadow-lg p-8">
+          <h3 class="font-semibold mb-4">Patient Profile</h3>
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-16 h-16 bg-teal-200 text-teal-600 flex items-center justify-center rounded-lg text-xl font-bold">BY</div>
+            <div class="flex flex-col">
+              <span class="font-semibold"> Username.</span>
+              <span class="text-gray-500 text-sm">Age XX • Male</span>
+            </div>
+          </div>
+          <ul class="text-gray-700 text-sm space-y-1">
+            <li><strong>Name:</strong> Patient 1</li>
+            <li><strong>Email:</strong> Patient 1@gmail.com</li>
+            <li><strong>Phone:</strong> +91 98765 43210</li>
+            <li><strong>Doctor Assigned:</strong> Doctor 1</li>
+          </ul>
+          <div class="mt-4 flex flex-col gap-2">
+            <button class="bg-green-100 text-green-600 px-4 py-2 rounded font-semibold">Message Doctor</button>
+            <button class="border border-gray-300 px-4 py-2 rounded font-semibold">Download Report</button>
+          </div>
+        </aside>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
